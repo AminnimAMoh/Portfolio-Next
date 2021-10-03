@@ -5,18 +5,19 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 
 import useStyle from "./AppStyle";
 import { Snackbar, Slide, useMediaQuery } from "@mui/material";
+import { ThemeProvider } from "@mui/styles";
 
 //Importing the redux store type.
 import { RootState } from "./store";
 import { useSelector, useDispatch } from "react-redux";
 import { rowGridToggleToReverce } from "./redux/slices/ScreenSettingsSlice";
 import { readDataAgain } from "./redux/slices/fetchSlice";
+import theme from './theme'
 
 import MenuButton from "./views/MenuButton";
 import ContentContainer from "./views/ContentContainer";
 
-
-const DataFetchPending=React.lazy(()=>import("./views/DataFetchPending"));
+const DataFetchPending = React.lazy(() => import("./views/DataFetchPending"));
 
 //An easy way to apply transitions to Material-UI components.
 //Pre writen transition from Material-UI.
@@ -30,7 +31,7 @@ function App(): React.ReactElement {
   const [svgSetupTrigger, setSVGSetupTrigger] = useState<boolean>(false);
   const [snackState, setSnackState] = useState<boolean>(false);
   const dispatch = useDispatch();
-  const windowState=useMediaQuery("(max-width:1280px)")
+  const windowState = useMediaQuery("(max-width:1280px)");
 
   const {
     buttonAction: { rootState, buttonTrigered },
@@ -39,9 +40,9 @@ function App(): React.ReactElement {
   const classes = useStyle();
 
   useEffect(() => {
-      if (windowState) {
-        dispatch(rowGridToggleToReverce(window.innerWidth));
-      }
+    if (windowState) {
+      dispatch(rowGridToggleToReverce(window.innerWidth));
+    }
   }, [windowState]);
 
   useEffect(() => {
@@ -70,24 +71,26 @@ function App(): React.ReactElement {
   };
 
   return (
-    <div
-      className={rootState ? `${classes.root} open` : `${classes.root} close`}
-    >
-      {!svgSetupTrigger && buttonTrigered === "D3" && (
-        <div className={classes.loading}>
+    <ThemeProvider theme={theme}>
+      <div
+        className={rootState ? `${classes.root} open` : `${classes.root} close`}
+      >
+        {!svgSetupTrigger && buttonTrigered === "D3" && (
+          <div className={classes.loading}>
             <DataFetchPending />
-        </div>
-      )}
-      <Snackbar
-        open={snackState}
-        TransitionComponent={TransitionUp}
-        message={`Failed to fetch data. Click here to try again.`}
-        onClick={snackBarRefreshAction}
-        classes={{ root: classes.snackbar }}
-      />
-      <MenuButton />
-      <ContentContainer />
-    </div>
+          </div>
+        )}
+        <Snackbar
+          open={snackState}
+          TransitionComponent={TransitionUp}
+          message={`Failed to fetch data. Click here to try again.`}
+          onClick={snackBarRefreshAction}
+          classes={{ root: classes.snackbar }}
+        />
+        <MenuButton />
+        <ContentContainer />
+      </div>
+    </ThemeProvider>
   );
 }
 
