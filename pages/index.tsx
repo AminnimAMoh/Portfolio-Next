@@ -5,14 +5,13 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 
 import useStyle from "./AppStyle";
 import { Snackbar, Slide, useMediaQuery } from "@mui/material";
-import { ThemeProvider } from "@mui/styles";
 
 //Importing the redux store type.
 import { RootState } from "./store";
 import { useSelector, useDispatch } from "react-redux";
 import { rowGridToggleToReverce } from "./redux/slices/ScreenSettingsSlice";
 import { readDataAgain } from "./redux/slices/fetchSlice";
-import theme from './theme'
+// import style from "../";
 
 import MenuButton from "./views/MenuButton";
 import ContentContainer from "./views/ContentContainer";
@@ -71,7 +70,6 @@ function App(): React.ReactElement {
   };
 
   return (
-    <ThemeProvider theme={theme}>
       <div
         className={rootState ? `${classes.root} open` : `${classes.root} close`}
       >
@@ -90,7 +88,6 @@ function App(): React.ReactElement {
         <MenuButton />
         <ContentContainer />
       </div>
-    </ThemeProvider>
   );
 }
 
