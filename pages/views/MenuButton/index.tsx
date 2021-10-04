@@ -4,6 +4,7 @@ import useStyle from "./style";
 import useMeasure from "react-use-measure";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../store";
+import Image from "next/image";
 
 import {
   containerStateToggle,
@@ -133,10 +134,12 @@ function MenuButton(): React.ReactElement {
         // onMouseOver={() => setShowInfo(true)}
         // onMouseOut={() => setShowInfo(false)}
       >
-        <img
-          ref={buttonMesures}
+        <Image
           src="images/Button/Menu_Trigger/Power_Button-Stoke.png"
           alt="content-asset"
+          width={500}
+          height={500}
+          ref={buttonMesures}
         />
       </div>
 

@@ -1,7 +1,9 @@
 //This is the 'majula'. Dark Souls fans are familiar with this place. 😅
 //Here we managing the main states.
 
-import React, { useEffect, useState, lazy, Suspense } from "react";
+import React, { useEffect, useState} from "react";
+
+import dynamic from 'next/dynamic';
 
 import useStyle from "./AppStyle";
 import { Snackbar, Slide, useMediaQuery } from "@mui/material";
@@ -13,10 +15,11 @@ import { rowGridToggleToReverce } from "./redux/slices/ScreenSettingsSlice";
 import { readDataAgain } from "./redux/slices/fetchSlice";
 // import style from "../";
 
-import MenuButton from "./views/MenuButton";
-import ContentContainer from "./views/ContentContainer";
+import Loading from './views/Loading'
 
-const DataFetchPending = React.lazy(() => import("./views/DataFetchPending"));
+const DataFetchPending = dynamic(() => import("./views/DataFetchPending"), {loading: ()=> <Loading/>});
+const MenuButton=dynamic(()=> import("./views/MenuButton"), {loading: ()=>  <Loading/>})
+const ContentContainer=dynamic(()=> import("./views/ContentContainer"), {loading: ()=>  <Loading/>})
 
 //An easy way to apply transitions to Material-UI components.
 //Pre writen transition from Material-UI.

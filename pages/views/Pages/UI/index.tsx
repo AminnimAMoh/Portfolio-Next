@@ -1,12 +1,14 @@
 import React from "react";
 import useStyle from "../styles";
 import { Grid, Typography } from "@mui/material";
+import dynamic from 'next/dynamic';
+import Loading from "../../Loading"
 
-const Topicheader = React.lazy(
-  () => import("../../Shared-Components/Page-header")
+const Topicheader = dynamic(
+  () => import("../../Shared-Components/Page-header"), {loading: ()=> <Loading/>}
 );
 
-const YouTubeEmbed = React.lazy(() => import("../YouTubeEmbed"));
+const YouTubeEmbed = dynamic(() => import("../YouTubeEmbed"), {loading: ()=> <Loading/>});
 
 function UI(): React.ReactElement {
   const classes = useStyle();

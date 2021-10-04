@@ -39,7 +39,5 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "include": [
-    "txsrc"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts"],
 }

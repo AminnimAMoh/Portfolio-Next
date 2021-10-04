@@ -2,17 +2,21 @@ import React, { useRef } from "react";
 import useStyle from "./style";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
-// import UX from "../Pages/UX";
-// import UI from "../Pages/UI";
-// import CV from "../Pages/CV";
+import dynamic from "next/dynamic";
+import Loading from "../Loading";
+import image from "next/image";
+import MobileContainer from "/public/images/Containers/Content_Frame/Mobile.png"
 
-const UX = React.lazy(()=>import("../Pages/UX"));
-const UI = React.lazy(()=>import("../Pages/UI"));
-const CV = React.lazy(()=>import("../Pages/CV"));
-const D3=React.lazy(()=>import("../Pages/D3"));
+const UX = dynamic(() => import("../Pages/UX"), { loading: () => <Loading /> });
+const UI = dynamic(() => import("../Pages/UI"), { loading: () => <Loading /> });
+const CV = dynamic(() => import("../Pages/CV"), { loading: () => <Loading /> });
+const D3 = dynamic(() => import("../Pages/D3"), { loading: () => <Loading /> });
+const Undeveloped = dynamic(() => import("../Pages/Undeveloped"), {
+  loading: () => <Loading />,
+});
+// const MobileContainer=dynamic(()=>import("../../../public/images/Containers/"),{loading: ()=> <Loading/>});
 
 // import D3 from "../Pages/D3";
-import Undeveloped from "../Pages/Undeveloped";
 
 function RenderObject(state: any): React.ReactElement {
   switch (state.state) {
@@ -36,9 +40,9 @@ function ContentContainer(): React.ReactElement {
   const handleScroll = () => {
     rootDetails.current &&
     scrollToTop.current &&
-    rootDetails.current.scrollTop > 800 
-    ? scrollToTop.current?.classList.add("open")
-    : scrollToTop.current?.classList.remove("open")
+    rootDetails.current.scrollTop > 800
+      ? scrollToTop.current?.classList.add("open")
+      : scrollToTop.current?.classList.remove("open");
   };
 
   const handleClick = () => {
@@ -89,8 +93,8 @@ function ContentContainer(): React.ReactElement {
       >
         <div />
       </div>
-      <img
-        src="images/Containers/Content_Frame/Mobile.png"
+      <image
+        src={MobileContainer}
         alt="content"
         className={classes.MobileFrame}
       />
