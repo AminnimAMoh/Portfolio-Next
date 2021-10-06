@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../../Shared_Components/store";
-import { containerStateToggle } from "../../../redux/slices/buttonActionSlice";
+import { AppDispatch } from "../store";
+import { containerStateToggle } from "../../Redux/redux/slices/buttonActionSlice";
 import { ClassNameMap } from "@mui/styles";
 
 interface Props {

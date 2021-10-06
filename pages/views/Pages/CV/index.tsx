@@ -1,7 +1,7 @@
 import React from "react";
-import useStyle from "../styles";
+import useStyle from "../../../../styles/Pages_styles";
 import { Grid, Link, Typography, Divider } from "@mui/material";
-import { containerStateToggle } from "../../../redux/slices/buttonActionSlice";
+import { containerStateToggle } from "../../../../Redux/redux/slices/buttonActionSlice";
 import { useDispatch } from "react-redux";
 
 const reesbyResponsibilities = [

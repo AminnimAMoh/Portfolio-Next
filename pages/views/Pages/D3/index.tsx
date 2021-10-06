@@ -8,9 +8,9 @@ import {
   fetchPopulationData,
   fetchMonthData,
   fetchMap,
-} from "../../../redux/slices/fetchSlice";
+} from "../../../../Redux/redux/slices/fetchSlice";
 import { RootState } from "../../../../Shared_Components/store";
-import useStyle from "./styles";
+import useStyle from "../../../../styles/D3_styles";
 
 interface viewBoxSetups {
   mobile: { map: string; UI: string };

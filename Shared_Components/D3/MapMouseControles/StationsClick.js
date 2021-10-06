@@ -1,5 +1,5 @@
-import { staticState } from "../../../../../Shared_Components/D3/D3-Executables/staticVariables";
-import { angleScale } from "../../../../../Shared_Components/utilities";
+import { staticState } from "../D3-Executables/staticVariables"
+import {angleScale} from "../D3-Executables/utilities"
 import PopulationCircles from "../MapComponents/PopulationCircles";
 import RadarChartEngin from '../ExternalResource/RadarChart'
 

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { RootState } from "../../../Shared_Components/store";
-import useStyle from "./style";
+import useStyle from "../../../styles/MenuButton_style";
 import useMeasure from "react-use-measure";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../../Shared_Components/store";
@@ -10,7 +10,7 @@ import {
   containerStateToggle,
   onDelayStateChange,
   // addButtonsPosition
-} from "../../redux/slices/buttonActionSlice";
+} from "../../../Redux/redux/slices/buttonActionSlice";
 import { useMediaQuery } from "@mui/material";
 
 interface mediaQueries {

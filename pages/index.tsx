@@ -5,14 +5,14 @@ import React, { useEffect, useState} from "react";
 
 import dynamic from 'next/dynamic';
 
-import useStyle from "./AppStyle";
+import useStyle from "../styles/AppStyle";
 import { Snackbar, Slide, useMediaQuery } from "@mui/material";
 
 //Importing the redux store type.
 import { RootState } from "../Shared_Components/store";
 import { useSelector, useDispatch } from "react-redux";
-import { rowGridToggleToReverce } from "./redux/slices/ScreenSettingsSlice";
-import { readDataAgain } from "./redux/slices/fetchSlice";
+import { rowGridToggleToReverce } from "../Redux/redux/slices/ScreenSettingsSlice";
+import { readDataAgain } from "../Redux/redux/slices/fetchSlice";
 // import style from "../";
 
 import Loading from './views/Loading'

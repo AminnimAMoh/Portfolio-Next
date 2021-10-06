@@ -1,6 +1,6 @@
 import React from 'react'
 import {Backdrop, CircularProgress} from '@mui/material';
-import useStyles from './styles'
+import useStyles from '../../../styles/Loading_styles'
 
 function Loading(): React.ReactElement {
     const classes = useStyles();

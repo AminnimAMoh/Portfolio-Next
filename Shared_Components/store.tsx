@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from 'react-redux'
-import buttonActionSlice from "../pages/redux/slices/buttonActionSlice";
-import ScreenSettingsSlice from "../pages/redux/slices/ScreenSettingsSlice";
-import FetchSlice from '../pages/redux/slices/fetchSlice'
+import buttonActionSlice from "../Redux/redux/slices/buttonActionSlice";
+import ScreenSettingsSlice from "../Redux/redux/slices/ScreenSettingsSlice";
+import FetchSlice from '../Redux/redux/slices/fetchSlice'
 
 const store: any = configureStore({
     reducer:{

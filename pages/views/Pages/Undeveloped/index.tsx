@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material'
 import React from 'react'
-import useStyle from '../styles'
+import useStyle from '../../../../styles/Pages_styles'
 
 
 function Undeveloped(): React.ReactElement {

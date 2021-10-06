@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../../Shared_Components/store";
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axiosInterceptor from "../../axiosInterceptor";
+import axiosInterceptor from "../../../pages/axiosInterceptor";
 
 export const fetchMap = createAsyncThunk(
   "fetchData/Map",

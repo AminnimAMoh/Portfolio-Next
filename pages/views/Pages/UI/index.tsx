@@ -1,5 +1,5 @@
 import React from "react";
-import useStyle from "../styles";
+import useStyle from "../../../../styles/Pages_styles";
 import { Grid, Typography } from "@mui/material";
 import dynamic from 'next/dynamic';
 import Loading from "../../Loading"

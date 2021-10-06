@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import useStyle from "./style";
+import useStyle from "../../../styles/ContentContainer_style";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../Shared_Components/store";
 import dynamic from "next/dynamic";

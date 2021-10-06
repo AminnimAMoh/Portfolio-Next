@@ -1,5 +1,5 @@
 import React from 'react'
-import useStyle from '../styles'
+import useStyle from '../../../../styles/Pages_styles'
 import useMeasure from "react-use-measure";
 
 interface Props {

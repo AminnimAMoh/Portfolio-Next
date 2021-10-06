@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { Grid, Typography, Link } from "@mui/material";
-import useStyle from "../../Pages/styles";
+import useStyle from "../../../../styles/Pages_styles";
 
 interface Links{
     href: string,
