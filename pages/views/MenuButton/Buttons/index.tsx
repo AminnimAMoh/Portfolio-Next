@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store";
 import { containerStateToggle } from "../../../redux/slices/buttonActionSlice";
-import { ClassNameMap } from "@material-ui/styles";
+import { ClassNameMap } from "@mui/styles";
 
 interface Props {
     x: number;

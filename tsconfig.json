@@ -12,7 +12,7 @@
     "allowJs": true,
     "jsx": "preserve",
     "moduleResolution": "node",
-    "rootDir": "./txsrc",
+    "rootDir": "./",
     "outDir": "./src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
@@ -39,5 +39,10 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "additional.d.ts"
+  ]
 }

@@ -1,18 +1,19 @@
 import { makeStyles, createStyles } from "@mui/styles";
 
-const useStyle = makeStyles((theme) => createStyles({
+const useStyle = makeStyles((theme) =>
+ createStyles({
     root: {
       height: "100vh",
       display: "flex",
       flexFlow: "row-reverse",
       justifyContent: "center",
       alignItems: "center",
-      [theme.breakpoints.down("md")]: {
+      [theme.breakpoints.down('lg')]: {
         flexFlow: "column",
       },
       "&.open": {
         paddingRight: theme.spacing(20),
-        [theme.breakpoints.down("md")]: {
+        [theme.breakpoints.down('lg')]: {
           paddingRight: theme.spacing(0),
         },
       },

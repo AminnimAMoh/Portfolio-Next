@@ -21,10 +21,10 @@ const useStyle = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "right",
     padding: theme.spacing(12, 41, 12, 6),
-    [theme.breakpoints.down("lg")]: {
+    [theme.breakpoints.down('xl')]: {
       padding: theme.spacing(12, 40, 0, 6),
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('lg')]: {
       backgroundImage: "none",
       padding: theme.spacing(0, 6, 12),
     },
@@ -51,7 +51,7 @@ const useStyle = makeStyles((theme) => ({
     height: "auto",
     top: "-5px",
     width: "100%",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('lg')]: {
       display: "block",
     },
   },
@@ -67,14 +67,14 @@ const useStyle = makeStyles((theme) => ({
     transition: "transform .5s ease-in-out",
     "&.open":{
       transform: "translate(40px,-35px) scale(.7)",
-      [theme.breakpoints.down("lg")]:{
+      [theme.breakpoints.down('xl')]:{
         transform: "translate(20px,-120px) scale(.7)",
       },
-      [theme.breakpoints.down('md')]:{
+      [theme.breakpoints.down('lg')]:{
       transform: "translate(40px,-35px) scale(.5)",
       }
     },
-    [theme.breakpoints.down('md')]:{
+    [theme.breakpoints.down('lg')]:{
       transform: "translateY(40px,-35px) scale(0)",
     },
     "& >div": {

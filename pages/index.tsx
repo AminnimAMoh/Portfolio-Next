@@ -29,7 +29,6 @@ function TransitionUp(props: any | undefined | null) {
 }
 
 function App(): React.ReactElement {
-  // console.clear();
   const [svgSetupTrigger, setSVGSetupTrigger] = useState<boolean>(false);
   const [snackState, setSnackState] = useState<boolean>(false);
   const dispatch = useDispatch();

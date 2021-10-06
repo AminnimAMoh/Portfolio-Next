@@ -10,15 +10,15 @@ const useStyle = makeStyles((theme) => ({
     width: "20%",
     zIndex: 1,
     transition: "transform 1s ease-in",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('lg')]: {
       width: "100%",
       height: "20%",
       paddingTop: theme.spacing(15),
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       paddingTop: theme.spacing(7),
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       paddingTop: theme.spacing(1),
     },
   },
@@ -27,10 +27,10 @@ const useStyle = makeStyles((theme) => ({
     zIndex: 2,
     position: "relative",
     width: "100%",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('lg')]: {
       width: "18%",
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       width: "25%",
     },
     "&>img": {

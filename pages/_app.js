@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { ThemeProvider } from "@mui/styles";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material";
 import theme from './theme'
 import { Provider } from "react-redux";
 import store from "./store";
@@ -8,12 +8,14 @@ import "./Styles/index.scss"
 
 function MyApp({ Component, pageProps }) {
   return (
-  <ThemeProvider theme={theme}>
-    <Provider store={store}>
-    <Component {...pageProps} />
-    </Provider>
-  </ThemeProvider>
-  )
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Provider store={store}>
+        <Component {...pageProps} />
+        </Provider>
+      </ThemeProvider>
+    </StyledEngineProvider>
+  );
 }
 
 export default MyApp;
