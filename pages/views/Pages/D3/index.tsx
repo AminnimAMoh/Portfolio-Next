@@ -9,29 +9,13 @@ import {
   fetchMonthData,
   fetchMap,
 } from "../../../redux/slices/fetchSlice";
-import { RootState } from "../../../store";
-import { makeStyles } from "@mui/styles";
+import { RootState } from "../../../../Shared_Components/store";
+import useStyle from "./styles";
 
 interface viewBoxSetups {
   mobile: { map: string; UI: string };
   desktop: { map: string; UI: string };
 }
-
-const useStyle = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    height: "100%",
-    position: "relative",
-    "&> *": {
-      [theme.breakpoints.up("md")]: {
-        padding: theme.spacing(6),
-      },
-      position: "absolute",
-      top: "0",
-      left: "0",
-    },
-  },
-}));
 
 function D3(): React.ReactElement {
   const {
@@ -43,10 +27,10 @@ function D3(): React.ReactElement {
   const mapSVG = useRef<SVGSVGElement | null>(null);
   const [svgSetupTrigger, setSVGSetupTrigger] = useState<boolean>(false);
   const windowState = useMediaQuery("(max-width:600px)");
-  const [viewBoxesSetup, setViewBoxesSrtup] = useState<viewBoxSetups>({
+  const viewBoxesSetup: viewBoxSetups = {
     desktop: { map: "-1 0 25 25", UI: "-140 0 1000 1000" },
     mobile: { map: "1.3 0 20 20", UI: "-45 0 800 800" },
-  });
+  };
 
   const [svg, setSvg] = useState<null | Selection<
     SVGSVGElement | null,
@@ -69,9 +53,11 @@ function D3(): React.ReactElement {
     if (months.state === "empty") dispatch(fetchMonthData());
     if (mapJSON.state === "empty") dispatch(fetchMap());
 
-    if (annualrain.state === "rejected" && refresh) dispatch(fetchAnnualrainData());
+    if (annualrain.state === "rejected" && refresh)
+      dispatch(fetchAnnualrainData());
     if (slums.state === "rejected" && refresh) dispatch(fetchSlumsData());
-    if (population.state === "rejected" && refresh) dispatch(fetchPopulationData());
+    if (population.state === "rejected" && refresh)
+      dispatch(fetchPopulationData());
     if (months.state === "rejected" && refresh) dispatch(fetchMonthData());
     if (mapJSON.state === "rejected" && refresh) dispatch(fetchMap());
   }, [
@@ -102,7 +88,7 @@ function D3(): React.ReactElement {
   useEffect(() => {
     !svg && svgSetupTrigger && setSvg(select(svgRef.current));
     if (annualrain.data.length > 0 && svg) {
-      import(/* webpackChunkName: 'D3-Draw' */ "./Draw").then(
+      import(/* webpackChunkName: 'D3-Draw' */ "../../../../Shared_Components/D3/Draw").then(
         ({ default: Draw }) => {
           Draw(
             svg,
@@ -119,7 +105,7 @@ function D3(): React.ReactElement {
 
     !mapSVGState && svgSetupTrigger && setMapSVGState(select(mapSVG.current));
     if (mapJSON.data && mapSVGState) {
-      import(/* webpackChunkName: 'D3-mapSVG' */ "./MapComponents/Map").then(
+      import(/* webpackChunkName: 'D3-mapSVG' */ "../../../../Shared_Components/D3/MapComponents/Map").then(
         ({ default: SVGMAP }) => {
           SVGMAP(mapSVGState, mapJSON.data);
         }

@@ -8,12 +8,12 @@ const useStyle = makeStyles((theme) =>
       flexFlow: "row-reverse",
       justifyContent: "center",
       alignItems: "center",
-      [theme.breakpoints.down('lg')]: {
+      [theme.breakpoints.down('xl')]: {
         flexFlow: "column",
       },
       "&.open": {
         paddingRight: theme.spacing(20),
-        [theme.breakpoints.down('lg')]: {
+        [theme.breakpoints.down('xl')]: {
           paddingRight: theme.spacing(0),
         },
       },

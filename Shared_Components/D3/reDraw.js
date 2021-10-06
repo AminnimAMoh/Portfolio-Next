@@ -1,6 +1,5 @@
 import * as d3 from 'd3'
-import Radar from "react-d3-radar";
-import style from "./style.css";
+import Radar from './ExternalResource/RadarChart'
 
 const reDrawCan=(annualrain, months)=>{
     const annualRainData = annualrain.data;

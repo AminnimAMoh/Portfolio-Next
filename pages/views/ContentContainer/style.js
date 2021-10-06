@@ -24,7 +24,7 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.down('xl')]: {
       padding: theme.spacing(12, 40, 0, 6),
     },
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('xl')]: {
       backgroundImage: "none",
       padding: theme.spacing(0, 6, 12),
     },
@@ -51,7 +51,7 @@ const useStyle = makeStyles((theme) => ({
     height: "auto",
     top: "-5px",
     width: "100%",
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('xl')]: {
       display: "block",
     },
   },
@@ -70,11 +70,11 @@ const useStyle = makeStyles((theme) => ({
       [theme.breakpoints.down('xl')]:{
         transform: "translate(20px,-120px) scale(.7)",
       },
-      [theme.breakpoints.down('lg')]:{
+      [theme.breakpoints.down('xl')]:{
       transform: "translate(40px,-35px) scale(.5)",
       }
     },
-    [theme.breakpoints.down('lg')]:{
+    [theme.breakpoints.down('xl')]:{
       transform: "translateY(40px,-35px) scale(0)",
     },
     "& >div": {

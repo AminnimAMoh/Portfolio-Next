@@ -84,7 +84,7 @@ function UI(): React.ReactElement {
           <Grid item lg={6} md={12}>
             <Typography variant="h5">useState</Typography>
             <Typography variant="body1">
-              "useState" is a React hook function that allows us to change the
+              &quot_useState is a React hook function that allows us to change the
               state of the function components if required. React hook functions
               are well design to secure the function component from possible
               errors in the code as well as stabilizing the connection between
@@ -94,11 +94,11 @@ function UI(): React.ReactElement {
           <Grid item lg={6} md={12}>
             <Typography variant="h5">useEffect</Typography>
             <Typography variant="body1">
-              "useEffect" function is another React hook that allows us to read
+            &quot_useEffect function is another React hook that allows us to read
               from our API data base only on specified circumstances.
-              "useEffect" helps us to minimize the tokens on our API and reduces
+              &quot_useEffect helps us to minimize the tokens on our API and reduces
               the load on the API server. In this application, we mainly use the
-              "useEffect" hook to read and write on our API database with a
+              &quot_useEffect hook to read and write on our API database with a
               minimum number of tokens for each request to maintain the API
               service.
             </Typography>
@@ -118,28 +118,28 @@ function UI(): React.ReactElement {
           <Grid item lg={6} md={12}>
             <Typography variant="h5">useHistory</Typography>
             <Typography variant="body1">
-              "useHistory" is a hook function from React Router Core npm to
+            &quot_useHistory is a hook function from React Router Core npm to
               trigger the Link function in a class function rather than the
-              render function. "useHistory" in this application allows us to
+              render function. &quot_useHistory in this application allows us to
               route between pages using different states of function components
               in conditions. In this application, this condition listens to the
-              direction of the user's swipe.
+              direction of the users swipe.
             </Typography>
           </Grid>
 
           <Grid item lg={6} md={12}>
             <Typography variant="h5">Switch</Typography>
             <Typography variant="body1">
-              "Switch" is unique in that it renders a route exclusively. In
-              contrast, every "Route" that matches the location renders
+            &quot_Switch is unique in that it renders a route exclusively. In
+              contrast, every &quot_Route that matches the location renders
               inclusively.
             </Typography>
           </Grid>
           <Grid item lg={6} md={12}>
             <Typography variant="h5">Route</Typography>
             <Typography variant="body1">
-              "Route" most basic responsibility is to render some UI when its
-              path matches the current URL passed as the path. "Route" also sets
+            &quot_Route most basic responsibility is to render some UI when its
+              path matches the current URL passed as the path. &quot_Route also sets
               the props required for the routing component and on each request
               to the path it makes the hook between the sender and receiver
               component.
@@ -148,9 +148,9 @@ function UI(): React.ReactElement {
           <Grid item lg={6} md={12}>
             <Typography variant="h5">Link</Typography>
             <Typography variant="body1">
-              "Link" allows us to navigate to specified path component/page in
+            &quot_Link allows us to navigate to specified path component/page in
               HTML format (render function) and transferring object properties
-              as props. In this application, we have used "Link" on our buttons
+              as props. In this application, we have used &quot_Link on our buttons
               triggering routes to other pages and transferring the props to the
               function component.
             </Typography>
@@ -170,7 +170,7 @@ function UI(): React.ReactElement {
           </Grid>
           <Grid item xs={12}>
             <Typography variant="body1">
-              Firebase is Google's free cloud storage that handles many aspects
+              Firebase is Googles free cloud storage that handles many aspects
               of backend functionality. For this project, this service allows
               reservation of questions and users results in a form of API data
               sources as well as deploying the platform.
@@ -221,7 +221,7 @@ function UI(): React.ReactElement {
               questions card as clear user feedback on their swipe actions. This
               library also allows the application to count the correct answers
               as well as the total number of questions answered. Using the
-              ”onSwipe” listener built-in on this library we can monitor the
+              &quot_onSwipe listener built-in on this library we can monitor the
               direction the swipe user makes for each question.
             </Typography>
           </Grid>

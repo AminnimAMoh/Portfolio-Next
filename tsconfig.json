@@ -28,7 +28,8 @@
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "incremental": true
   },
   "exclude": [
     "node_modules",
@@ -43,6 +44,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "additional.d.ts"
-  ]
+    "additional.d.ts",
+    "pages/AppStyle.js",
+    "pages/views/ContentContainer/style.js",
+    "pages/views/MenuButton/InfoFlout/styles.js",
+    "pages/views/MenuButton/style.js",
+    "pages/views/Pages/styles.js"
+, "Shared_Components/theme.js"  ]
 }

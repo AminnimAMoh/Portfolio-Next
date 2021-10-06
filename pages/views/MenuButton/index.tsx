@@ -1,11 +1,10 @@
-import React, { useState, useRef, createRef } from "react";
-import { RootState } from "../../store";
+import React, { useState, useRef } from "react";
+import { RootState } from "../../../Shared_Components/store";
 import useStyle from "./style";
 import useMeasure from "react-use-measure";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "../../store";
+import { AppDispatch } from "../../../Shared_Components/store";
 import Image from "next/image";
-import PowerButton from '/images/Button/Menu_Trigger/Power_Button-Stoke.png'
 
 import {
   containerStateToggle,

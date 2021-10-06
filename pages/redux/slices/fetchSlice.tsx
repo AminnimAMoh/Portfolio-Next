@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../../store";
+import { RootState } from "../../../Shared_Components/store";
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axiosInterceptor from "../../axiosInterceptor";
@@ -20,7 +20,7 @@ export const fetchAnnualrainData = createAsyncThunk(
   "fetchData/AnnualRainData",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axiosInterceptor().get("annualrain");
+      const response: any = await axiosInterceptor().get("annualrain");
       return response.data.annualRain;
     } catch (err) {
       return rejectWithValue(err);
@@ -32,7 +32,7 @@ export const fetchSlumsData = createAsyncThunk(
   "fetchData/SlumsData",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axiosInterceptor().get("slums");
+      const response :any = await axiosInterceptor().get("slums");
       return response.data.slums;
     } catch (err) {
       return rejectWithValue(err);
@@ -44,7 +44,7 @@ export const fetchPopulationData = createAsyncThunk(
   "fetchData/PopulationData",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axiosInterceptor().get("population");
+      const response: any = await axiosInterceptor().get("population");
       return response.data.population;
     } catch (err) {
       return rejectWithValue(err);
@@ -56,7 +56,7 @@ export const fetchMonthData = createAsyncThunk(
   "fetchData/MonthsData",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axiosInterceptor().get("months");
+      const response: any = await axiosInterceptor().get("months");
       return response.data.monthlyTotal;
     } catch (err) {
       return rejectWithValue(err);

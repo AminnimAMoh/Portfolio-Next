@@ -3,8 +3,12 @@ import useStyle from "../styles";
 import { Grid, Typography, Link, useMediaQuery } from "@mui/material";
 import dynamic from "next/dynamic";
 import Loading from "../../Loading"
-import { useSelector } from "react-redux";
-import { RootState } from "../../../store";
+import Image from "next/image"
+import R2 from "/public/images/Pages/UX/Render-2.png"
+import R1 from "/public/images/Pages/UX/Render.png";
+import R3 from "/public/images/Pages/UX/Render-3.png"
+import R4 from "/public/images/Pages/UX/Render-4.png";
+import JourennyMap from "/public/images/Pages/UX/(Icon-Discription-Headings)Jourenny-Map(Custom-Size-Cancas).jpg"
 
 const Topicheader = dynamic(
   () => import("../../Shared-Components/Page-header"), {loading: ()=> <Loading/>}
@@ -14,10 +18,6 @@ const YouTubeEmbed = dynamic(() => import("../YouTubeEmbed"), {loading: ()=> <Lo
 function UX(): React.ReactElement {
   const classes = useStyle();
   const gridFlowToggle = useMediaQuery("(max-width:1280px)")
-  const {
-    screenAction: { gridRowToReverce, gridRowToColumn },
-  } = useSelector((state: RootState) => state);
-  console.log(gridFlowToggle);
   
   const TopicProps = {
     ProjectName: "User Experience Case Studies. Environmental Conservation.",
@@ -107,7 +107,7 @@ function UX(): React.ReactElement {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <img src="images/Pages/UX/Render.png" alt="content" />
+          <Image src={R1} alt="content" />
         </Grid>
         <Grid
           item
@@ -153,7 +153,7 @@ function UX(): React.ReactElement {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <img src="images/Pages/UX/Render-2.png" alt="content" />
+          <Image src={R2} alt="content" />
         </Grid>
         <Grid
           item
@@ -174,7 +174,7 @@ function UX(): React.ReactElement {
             Co2 emissions or Electricity use in real life.
           </Grid>
           <Grid item lg={6} md={12}>
-            <img src="images/Pages/UX/Render-3.png" alt="content" />
+            <Image src={R3} alt="content" />
           </Grid>
           <Grid
             item
@@ -186,7 +186,7 @@ function UX(): React.ReactElement {
             className={classes.inner_GridContainer}
           >
             <Grid item lg={6} md={12}>
-              <img src="images/Pages/UX/Render-4.png" alt="content" />
+              <Image src={R4} alt="content" />
             </Grid>
             <Grid item lg={6} md={12}>
               To accompany these mechanics is the systems AI, with the gathered
@@ -215,10 +215,10 @@ function UX(): React.ReactElement {
               href="images/Pages/UX/(Icon-Discription-Headings)Jourenny-Map(Custom-Size-Cancas).jpg"
               className={classes.onlineLink}
               style={{ bottom: "0px" }}
-              onClick={(e) => preventDefault}
+              onClick={(e) => e.preventDefault()}
             >
-              <img
-                src="images/Pages/UX/(Icon-Discription-Headings)Jourenny-Map(Custom-Size-Cancas).jpg"
+              <Image
+                src={JourennyMap}
                 alt="content"
               />
             </Link>

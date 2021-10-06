@@ -1,20 +1,20 @@
 import * as d3 from "d3";
 
-import { generateAllGroups } from "./DrawFunction/generateAllGroups";
+import { generateAllGroups } from "../../../../Shared_Components/D3/D3-Executables/DrawFunction/generateAllGroups";
 
-import { staticState } from "./data/staticVariables";
+import { staticState } from "../../../../Shared_Components/D3/D3-Executables/staticVariables";
 
 import {
   generatGradient,
   shadowGenerator,
   generateBlur,
-} from "./styleFunctions";
+} from "../../../../Shared_Components/styleFunctions";
 import {
   onClickTextFunction,
   slumScale,
   citiesProjection,
   geoLocations,
-} from "./utilities";
+} from "../../../../Shared_Components/utilities";
 
 const Draw = (
   container,

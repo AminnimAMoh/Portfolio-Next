@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import useStyle from "./style";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { RootState } from "../../../Shared_Components/store";
 import dynamic from "next/dynamic";
 import Loading from "../Loading";
-import image from "next/image";
+import Image from "next/image";
 import MobileContainer from "/public/images/Containers/Content_Frame/Mobile.png"
 
 const UX = dynamic(() => import("../Pages/UX"), { loading: () => <Loading /> });
@@ -93,7 +93,7 @@ function ContentContainer(): React.ReactElement {
       >
         <div />
       </div>
-      <image
+      <Image
         src={MobileContainer}
         alt="content"
         className={classes.MobileFrame}

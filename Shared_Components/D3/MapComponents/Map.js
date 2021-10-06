@@ -1,6 +1,6 @@
 import {
     geoLocations,
-  } from "../utilities";
+  } from "../../../Shared_Components/D3/D3-Executables/utilities";
 
 const SVGMAP=(container, data)=>{
   // console.log(data);

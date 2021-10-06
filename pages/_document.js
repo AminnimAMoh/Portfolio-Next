@@ -1,7 +1,7 @@
-import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheets } from '@mui/styles'; // works with @material-ui/core/styles, if you prefer to use it.
-import theme from './theme'; 
+import React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheets } from "@mui/styles"; // works with @mui/material/styles, if you prefer to use it.
+import theme from "../Shared_Components/theme";
 
 export default class MyDocument extends Document {
   render() {
@@ -10,6 +10,18 @@ export default class MyDocument extends Document {
         <Head>
           {/* Not exactly required, but this is the PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <link
+            rel="image"
+            href="images/Button/Menu_Trigger/Power_Button-Stoke.png"
+          />
+          <link rel="image" href="public/images/Button/Menu_List/ColorPalette.png" />
+          <link rel="image" href="public/images/Button/Menu_List/CV.png" />
+          <link rel="image" href="public/images/Button/Menu_List/info.png" />
+          <link rel="image" href="public/images/Button/Menu_List/Map.png" />
+          <link rel="image" href="public/images/Button/Menu_List/UI.png" />
+          <link rel="image" href="public/images/Button/Menu_List/UX.png" />
+          <link rel="image" href="public/images/Button/ScrollToTop/Top.png" />
+          <link rel="image" href="public/images/Containers/Content_Frame/Mobile.png" />
         </Head>
         <body>
           <Main />
@@ -59,6 +71,9 @@ MyDocument.getInitialProps = async (ctx) => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
+    styles: [
+      ...React.Children.toArray(initialProps.styles),
+      sheets.getStyleElement(),
+    ],
   };
 };
