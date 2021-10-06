@@ -10,16 +10,16 @@ const useStyle = makeStyles((theme) => ({
     width: "20%",
     zIndex: 1,
     transition: "transform 1s ease-in",
-    [theme.breakpoints.down('xl')]: {
+    '@media (max-width:1530px)': {
       width: "100%",
       height: "20%",
-      paddingTop: theme.spacing(15),
+      paddingTop: '32px',
     },
-    [theme.breakpoints.down('xl')]: {
-      paddingTop: theme.spacing(7),
+    '@media (max-width:1200px)': {
+      paddingTop: '26px',
     },
-    [theme.breakpoints.down('xl')]: {
-      paddingTop: theme.spacing(1),
+    '@media (max-width:900px)': {
+      paddingTop: "8px",
     },
   },
   powerButton: {

@@ -5,7 +5,7 @@ import { RootState } from "../../../Shared_Components/store";
 import dynamic from "next/dynamic";
 import Loading from "../Loading";
 import Image from "next/image";
-import MobileContainer from "/public/images/Containers/Content_Frame/Mobile.png"
+import MobileContainer from "/public/images/Containers/Content_Frame/Mobile.png";
 
 const UX = dynamic(() => import("../Pages/UX"), { loading: () => <Loading /> });
 const UI = dynamic(() => import("../Pages/UI"), { loading: () => <Loading /> });
@@ -93,11 +93,9 @@ function ContentContainer(): React.ReactElement {
       >
         <div />
       </div>
-      <Image
-        src={MobileContainer}
-        alt="content"
-        className={classes.MobileFrame}
-      />
+      <div className={classes.MobileFrame}>
+        <Image src={MobileContainer} alt="content" />
+      </div>
       <RenderObject state={renderPage} />
     </div>
   );

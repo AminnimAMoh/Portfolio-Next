@@ -13,6 +13,7 @@ import {
 } from "../../../Redux/redux/slices/buttonActionSlice";
 import { useMediaQuery } from "@mui/material";
 
+import PowerButton from "/public/images/Button/Menu_Trigger/Power_Button-Stoke.png";
 interface mediaQueries {
   rootState: boolean;
   phase: boolean;
@@ -136,10 +137,8 @@ function MenuButton(): React.ReactElement {
         ref={buttonMesures}
       >
         <Image
-          src="/images/Button/Menu_Trigger/Power_Button-Stoke.png"
+          src={PowerButton}
           alt="content-asset"
-          width={500}
-          height={500}
         />
       </div>
 

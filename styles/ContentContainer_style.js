@@ -51,7 +51,7 @@ const useStyle = makeStyles((theme) => ({
     height: "auto",
     top: "-5px",
     width: "100%",
-    [theme.breakpoints.down('xl')]: {
+    '@media (max-width:1500px)': {
       display: "block",
     },
   },
@@ -67,7 +67,7 @@ const useStyle = makeStyles((theme) => ({
     transition: "transform .5s ease-in-out",
     "&.open":{
       transform: "translate(40px,-35px) scale(.7)",
-      [theme.breakpoints.down('xl')]:{
+      '@media (min-width:1536px)':{
         transform: "translate(20px,-120px) scale(.7)",
       },
       [theme.breakpoints.down('xl')]:{
