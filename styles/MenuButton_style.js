@@ -133,11 +133,16 @@ const useStyle = makeStyles((theme) => ({
       },
     },
   },
+  buttonContainers__toolkit:{
+    position: "absolute",
+    top:'-30px', left:'50%',
+    transform: 'translateX(-50%)',
+    color: "white"
+  },
   textOnPath: {
     position: "absolute",
     "&>path": {
       transform: "translate(-693.7247px, -269.9313px)",
-      // fill: 'transparent',
     },
     "&>text": {
       fill: "white",
@@ -161,7 +166,6 @@ const useStyle = makeStyles((theme) => ({
     "&::before": {
       content: '""',
       display: "block",
-      // backgroundColor: "#e4e5e7",
       position: "absolute",
       top: 0,
       bottom: 0,
