@@ -5,22 +5,25 @@ import useMeasure from "react-use-measure";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../../Shared_Components/store";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import Loading from "../Loading";
 
 import {
   containerStateToggle,
   onDelayStateChange,
-  // addButtonsPosition
 } from "../../../Redux/redux/slices/buttonActionSlice";
 import { useMediaQuery } from "@mui/material";
 
 import PowerButton from "/public/images/Button/Menu_Trigger/Power_Button-Stoke.png";
+
+const Buttons = dynamic(() => import("./Buttons"), {
+  loading: () => <Loading />,
+});
+
 interface mediaQueries {
   rootState: boolean;
   phase: boolean;
 }
-
-// import { Positions } from "./types";
-// import { Typography } from "@mui/material";
 
 const calPos = (
   index: number,
@@ -54,10 +57,6 @@ function MenuButton(): React.ReactElement {
     phase: useMediaQuery("(max-width:560px)"),
   };
 
-  // const [showInfo, setShowInfo] = useState<boolean>(false);
-  // const [buttonPositions, setButtonsPosition] = useState<Positions[]>([
-  //   { x: 0, y: 0 },
-  // ]);
   const parentElement = useRef<HTMLDivElement>(null);
   const {
     buttonAction: { rootState, delayState, data },
@@ -66,20 +65,6 @@ function MenuButton(): React.ReactElement {
   const [buttonMesures, { width }] = useMeasure();
   const [powerState, setPowerState] = useState<boolean>(false);
   const buttonSizing = width;
-
-  // useEffect(() => {
-  //   buttonSizing > 0 &&
-  //     data.map(
-  //       ({ name, img }: { name: string; img: string }, index: number) => {
-  //         // console.log(index);
-  //         const { x, y } = calPos(index, data.length, buttonSizing, powerState);
-  //         setButtonsPosition((preState) => {
-  //           return [...preState, { x, y }];
-  //         });
-  //       }
-  //     );
-  // }, [buttonSizing]);
-  // console.log(buttonPositions);
 
   const handlePowerClick = () => {
     const parentChilrdernLength = parentElement.current?.childElementCount;
@@ -97,20 +82,6 @@ function MenuButton(): React.ReactElement {
     } else {
       setPowerState(() => !powerState);
     }
-  };
-
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const payload = e.currentTarget.id;
-    const parentChilrdernLength = parentElement.current?.childElementCount;
-    const prentArray = parentElement.current?.children;
-    if (parentChilrdernLength && prentArray) {
-      for (let i = 1; i < parentChilrdernLength; i++) {
-        prentArray[i].children[0].id === payload
-          ? prentArray[i].children[0].classList.add("focused")
-          : prentArray[i].children[0].classList.remove("focused");
-      }
-    }
-    dispatch(containerStateToggle(payload));
   };
 
   return (
@@ -132,14 +103,9 @@ function MenuButton(): React.ReactElement {
             : `${classes.powerButton} close`
         }
         onClick={handlePowerClick}
-        // onMouseOver={() => setShowInfo(true)}
-        // onMouseOut={() => setShowInfo(false)}
         ref={buttonMesures}
       >
-        <Image
-          src={PowerButton}
-          alt="content-asset"
-        />
+        <Image src={PowerButton} alt="content-asset" />
       </div>
 
       {data.map(
@@ -159,38 +125,14 @@ function MenuButton(): React.ReactElement {
             powerState,
             windowState
           );
-          return (
-            <div
-              key={name}
-              className={classes.buttonContainers}
-              style={{ transform: `translate(${x}px, ${y}px)` }}
-            >
-              {/* {info != "" && (
-                <div className={classes.introTexts_container}>
-                  <Typography
-                    variant="body1"
-                    className={
-                      showInfo && !powerState
-                        ? `${classes.introTexts_text} open`
-                        : `${classes.introTexts_text} close`
-                    }
-                  >
-                    {info}
-                  </Typography>
-                </div>
-              )} */}
-              <div
-                id={name}
-                className={classes.iconButtons}
-                style={{
-                  width: buttonSizing / 4,
-                  height: buttonSizing / 4,
-                  backgroundImage: `url(${img})`,
-                }}
-                onClick={(e) => handleClick(e)}
-              ></div>
-            </div>
-          );
+          const props = {
+            parentElement: parentElement,
+            name: name,
+            coordinates: { x: x, y: y },
+            buttonSizing: buttonSizing,
+            img: img,
+          };
+          return <Buttons key={name} {...props} />;
         }
       )}
     </div>
