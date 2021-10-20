@@ -133,12 +133,6 @@ const useStyle = makeStyles((theme) => ({
       },
     },
   },
-  buttonContainers__toolkit:{
-    position: "absolute",
-    top:'-30px', left:'50%',
-    transform: 'translateX(-50%)',
-    color: "white"
-  },
   textOnPath: {
     position: "absolute",
     "&>path": {

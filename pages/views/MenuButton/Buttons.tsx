@@ -4,6 +4,10 @@ import useStyle from "../../../styles/MenuButton_style";
 import { containerStateToggle } from "../../../Redux/redux/slices/buttonActionSlice";
 import { Typography } from "@mui/material";
 import useHover from "../../../Shared_Components/useHover";
+import dynamic from "next/dynamic"
+import Loading from '../Loading'
+
+const Toolkit=dynamic(()=>import('../Shared-Components/ToolKit'), {loading: ()=> <Loading/>})
 
 interface Props {
   name: string;
@@ -58,12 +62,7 @@ function Buttons({
         onClick={(e) => handleClick(e)}
       />
       {hoverValue && (
-        <Typography
-          variant="body1"
-          className={classes.buttonContainers__toolkit}
-        >
-          {name}
-        </Typography>
+          <ToolKit />
       )}
     </div>
   );
