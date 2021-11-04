@@ -1,25 +1,28 @@
+$yOffset: calc(-50% - 1px);
+
 @mixin toggle-directions($state, $direction) {
   @extend .buttonContainers__toolkit;
   @if $state {
-    width: 100%;
+    width: 120px;
+    white-space: normal;
+    text-align: left;
     @if $direction{
-      transform: translate(-100%, calc(-50% - 1px));
+      transform: translate(-100%, $yOffset);
     }@else{
-      transform: translate(100%, calc(-50% - 1px));
+      transform: translate(100%, $yOffset);
     }
   }@else{
     width: 0px;
-    transform: translate(0px, calc(-50% - 1px));
+    transform: translate(0px, $yOffset);
   }
 }
-
 
 .buttonContainers {
   &__toolkit {
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translate(0px, calc(-50% + 1px));
+    transform: translate(0px, $yOffset);
     height: fit-content;
     color: white;
     width: 0px;
@@ -27,15 +30,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     z-index: -1;
-    transition: width 0.5s ease-in-out 0.2s, transform 0.5s ease-in;
+    transition: width 0.1s ease-in, transform 0.7s ease-in-out;
     padding: 12px;
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-    }
+    text-align: center;
     &__open--right {
       @include toggle-directions($state: true, $direction: true)
     }
