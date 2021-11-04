@@ -1,20 +1,25 @@
 import { Typography } from "@mui/material";
 import React, { ReactElement } from "react";
-import useStyle from 'styles/Toolkit_styles.js';
+import styles from "../../../../styles/Toolkit_styles.module.scss";
 
 interface Props {
-    name: string;
-    state: boolean;
+  name: string;
+  state: boolean;
+  pos: boolean;
 }
 
-function Toolkit({name, state}: Props): ReactElement {
-  const classes=useStyle();
-
-    return (
-    <div className={classes.root}>
+function Toolkit({ name, state, pos }: Props): ReactElement {
+  return (
+    <div className={styles.buttonContainers}>
       <Typography
         variant="caption"
-        className={classes.buttonContainers__toolkit}
+        className={
+          state
+            ? pos > 0 ?
+            styles["buttonContainers__toolkit__" + "open--left"]
+            : styles["buttonContainers__toolkit__" + "open--right"]
+            : styles["buttonContainers__toolkit__" + "close"]
+        }
       >
         {name}
       </Typography>

@@ -130,6 +130,7 @@ function MenuButton(): React.ReactElement {
             name: name,
             coordinates: { x: x, y: y },
             buttonSizing: buttonSizing,
+            toolKit: toolKit,
             img: img,
           };
           return <Buttons key={name} {...props} />;

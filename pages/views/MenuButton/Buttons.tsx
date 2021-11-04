@@ -1,12 +1,14 @@
-import React, { ReactElement, useRef } from "react";
+import React, { ReactElement } from "react";
 import { useDispatch } from "react-redux";
 import useStyle from "../../../styles/MenuButton_style";
 import { containerStateToggle } from "../../../Redux/redux/slices/buttonActionSlice";
 import useHover from "../../../Shared_Components/useHover";
-import dynamic from "next/dynamic"
-import Loading from '../Loading'
+import dynamic from "next/dynamic";
+import Loading from "../Loading";
 
-const Toolkit=dynamic(()=>import('../Shared-Components/ToolKit'), {loading: ()=> <Loading/>})
+const Toolkit = dynamic(() => import("../Shared-Components/ToolKit"), {
+  loading: () => <Loading />,
+});
 
 interface Props {
   name: string;
@@ -16,6 +18,7 @@ interface Props {
   };
   buttonSizing: number;
   img: string;
+  toolKit: string;
   parentElement: React.RefObject<HTMLDivElement>;
 }
 
@@ -24,11 +27,17 @@ function Buttons({
   name,
   coordinates: { x, y },
   buttonSizing,
+  toolKit,
   img,
 }: Props): ReactElement {
   const classes = useStyle();
   const dispatch = useDispatch();
   const [hoverRef, hoverValue] = useHover<HTMLDivElement>();
+  const props={
+    name:toolKit,
+    state:hoverValue,
+    pos: x>0 ? true : false
+  }
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const payload = e.currentTarget.id;
@@ -60,9 +69,7 @@ function Buttons({
         }}
         onClick={(e) => handleClick(e)}
       />
-      {hoverValue && (
-          <Toolkit name={name} state={true}/>
-      )}
+      <Toolkit {...props}/>
     </div>
   );
 }
