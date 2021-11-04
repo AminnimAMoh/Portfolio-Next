@@ -2,7 +2,6 @@ import React, { ReactElement, useRef } from "react";
 import { useDispatch } from "react-redux";
 import useStyle from "../../../styles/MenuButton_style";
 import { containerStateToggle } from "../../../Redux/redux/slices/buttonActionSlice";
-import { Typography } from "@mui/material";
 import useHover from "../../../Shared_Components/useHover";
 import dynamic from "next/dynamic"
 import Loading from '../Loading'
@@ -62,7 +61,7 @@ function Buttons({
         onClick={(e) => handleClick(e)}
       />
       {hoverValue && (
-          <ToolKit />
+          <Toolkit name={name} state={true}/>
       )}
     </div>
   );
